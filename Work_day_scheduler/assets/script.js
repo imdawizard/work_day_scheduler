@@ -1,23 +1,46 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+ //delcaring global varibles
+  var divElements = document.querySelectorAll("div[id]");
+  let saveBtns = document.querySelectorAll(".btn");
+
+  //loop to add a querySelector to each save button
+  saveBtns.forEach((saveButton) => {
+    const timeBlockId = saveButton.parentNode.id;
+    const textAreaEl = document.querySelector(`#input-${timeBlockId}`);
+    const userInput = localStorage.getItem(timeBlockId);
+    //checks for previous input in local storage
+    if (userInput) {
+      textAreaEl.value = userInput;
+    }
+    //updates local storage if user inputs additional info
+    saveButton.addEventListener("click", function() {
+      const userInput = textAreaEl.value;
+      localStorage.setItem(timeBlockId, userInput);
+    });
+  });
+  
+//changes color of parent div based off the current time, past=gray, present=red, future=green
+  var time = dayjs().format("HH");
+  console.log(time);
+  divElements.forEach((divElement) => {
+    if (parseInt(divElement.id) < time) {
+      divElement.classList.add("past");
+    } else if (parseInt(divElement.id) == time) {
+      divElement.classList.add("present");
+    } else {
+      divElement.classList.add("future");
+    }
+  }
+  )
+
+//gets current time from day.js, Then displays that and the date to screen
+  const currentTimeElement = document.getElementById("currentDay");
+setInterval(() => {
+  const currentTime = dayjs().format("ddd, MMMM D YYYY, h:mm:ss A");
+  currentTimeElement.innerHTML = `Current date and time: ${currentTime}`;
+}, 1000);
+
+
+
+
 });

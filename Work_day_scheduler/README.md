@@ -1,99 +1,24 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-## Your Task
+# Work_day_scheduler
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Description: This site is a modified version of a starter code given for instructional purposes. It is a scheduler that can help those needing to keep track of their work day. Users will notice the current hour is highlighted red, while past and future hour blocks are different colors. In each hour block is space for input to be written which will stay on the screen despite refreshing attempts due to the wizardry with the local storage.
+The starter code consisted of 3 files: html, css, and javascript; which only contributing the file to have the structure but no functionality. I will go into what I changed in each file:
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+## HTML:
+The starter code only consisted of the first three hours of the day, I add 6 more hour blocks to account for the entire work day, then changed the id of div to correspond with the hour they represented, and added id’s to the textareas.
 
-## User Story
+## CSS
+Just added some random CSS to make the header look a little less shabby.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+## JS
+First I added a loop to add a querySelector to each save button, then within the same loop allowed linked the value of the text area to the button it was saved with to local storage. In addition added a feature for the loop to check for adjustments, and if so added that to local storage as well or just keeping it in the text area.
+I then created an if statement to check with the current hour so the hour blocks could be highlighted with a specific color depending upon the current hour.
+Lastly added a welcome message in the header, using day.js to display the current time and day.
 
-## Acceptance Criteria
+## Link to github repo: 
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+## Screenshot:
 
-The following animation demonstrates the application functionality:
+#Link to deployed application: 
 
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
