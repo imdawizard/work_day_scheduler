@@ -18,7 +18,8 @@ Lastly added a welcome message in the header, using day.js to display the curren
 
 ## Link to github repo: https://github.com/imdawizard/work_day_scheduler
 
-## Screenshot:
+## Screenshot: ![Screenshot 2023-05-18 232301](https://github.com/imdawizard/work_day_scheduler/assets/122409588/cf3ddcf8-7d56-4c73-a667-dd062067fb80)
 
-#Link to deployed application: 
+
+#Link to deployed application: https://imdawizard.github.io/work_day_scheduler/
 
