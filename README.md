@@ -16,7 +16,7 @@ First I added a loop to add a querySelector to each save button, then within the
 I then created an if statement to check with the current hour so the hour blocks could be highlighted with a specific color depending upon the current hour.
 Lastly added a welcome message in the header, using day.js to display the current time and day.
 
-## Link to github repo: 
+## Link to github repo: https://github.com/imdawizard/work_day_scheduler
 
 ## Screenshot:
 
